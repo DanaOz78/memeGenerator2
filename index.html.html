@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Image</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="onInit()">
+    <header class="main-header">
+        <div class="nav-container container flex space-between align-center">
+            <div class="logo" >Memes</div>
+            <ul class="main-nav  flex justify-content align-center clean-list">
+                <li><a class="flex justify-content align-center" href="#" onclick="onBack()">Gallery</a></li>
+                <li><a class="flex justify-content align-center" href="#">Memes</a></li>
+                <li><a class="flex justify-content align-center" href="#">About</a></li>
+            </ul>
+           
+    </header>
+    <div class="flex-wrapper">
+
+        <div class="canvas-container" style="display:none;">
+            <canvas id="my-canvas" width="400" height="400" > </canvas>
+        </div>
+        <section class="modal-box-container page" style="display:none;">
+            <label for="text1" class="text1"></label>
+            <input type="text"  id="text1" name="text1"
+             onchange="onDrawTextInCanvas(this.value); this.value='';"
+              placeholder="Enter text...">
+              <div class="buttons-wrapper">
+                  <button onclick="onAddEmptyRow()">
+                      <img class="img-icon" src="icons/add.png" />
+                  </button>
+                  <button onclick="onReplaceRows()">
+                      <img class="img-icon" src="icons/up-and-down-opposite-double-arrows-side-by-side.png" />
+                  </button>
+                  <button onclick="onRemoveLine()">
+                      <img class="img-icon" src="icons/trash.png" />
+                  </button>
+                  <button onclick="onAlignLeft()">
+                    <img class="img-icon" src="icons/align-to-left.png" />
+                   </button>
+                   <button onclick="onAlignRight()">
+                    <img class="img-icon" src="icons/align-to-right.png" />
+                   </button>
+                   <button onclick="onAlignCenter()">
+                    <img class="img-icon" src="icons/center-text-alignment.png" />
+                   </button>
+                   <button onclick="onIncrease()">
+                    <img class="img-icon" src="icons/increase font - icon.png"/>
+                    </button>
+                    <button onClick="onDecrease()">
+                        <img class="img-icon" src="icons/decrease font - icon.png"/>
+                        </button>
+
+                    </button>
+
+
+              </div>
+           
+        </section>
+    </div>
+    <section class="modal-image-container"></section>
+    <section class="modal-selected-img"></section>
+    
+    <script src="js/storage.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/controller.js"></script>
+
+</body>
+
+</html>
